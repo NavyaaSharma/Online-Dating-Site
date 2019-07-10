@@ -1,1 +1,11 @@
-<h1>home page</h1>
+<h1>Welcome To Online Dating Site</h1>
+{{#if user}}
+
+{{else}}
+<a href="/auth/facebook">
+    <button type="button" class="btn btn-lg btn-primary">Login With Facebook</button>
+</a>
+<a href="/auth/google">
+    <button type="button" class="btn btn-lg btn-danger">Login With Google</button>
+</a>
+{{/if}}
