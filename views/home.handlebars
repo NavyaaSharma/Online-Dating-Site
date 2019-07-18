@@ -2,10 +2,39 @@
 {{#if user}}
 
 {{else}}
-<a href="/auth/facebook">
-    <button type="button" class="btn btn-lg btn-primary">Login With Facebook</button>
-</a>
-<a href="/auth/google">
-    <button type="button" class="btn btn-lg btn-danger">Login With Google</button>
-</a>
+<div class="row">
+    <div class="col-sm-4">
+        <h1 class="center">
+            <a href="/auth/facebook">
+        <button type="button" class="btn btn-lg btn-primary">Login With Facebook</button>
+        </a>
+        </h1>
+        
+        <h1 class="center">
+            <a href="/auth/google">
+            <button type="button" class="btn btn-lg btn-danger">Login With Google</button>
+        </a>
+        </h1>
+        
+        <p class="center">Or</p>
+        <form action="/login" method="POST">
+            {{#each success}}
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{this.text}}
+            </div>
+            {{/each}}
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" name="password" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <a href="/newAccount">Dont't have an account, Register here</a>
+    </div>
+</div>
 {{/if}}
