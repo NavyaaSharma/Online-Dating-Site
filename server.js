@@ -11,6 +11,7 @@ var users=require('./models/users-db')
 var keys=require('./config/keys')
 require('./passport/facebook')
 require('./passport/google')
+require('./passport/local')
 
 
 var app=express()
@@ -195,6 +196,20 @@ app.get('/auth/google/callback',passport.authenticate('google',{
     successRedirect:'/profile',
     failureRedirect:'/'
 }))
+
+app.post('/login',passport.authenticate('local',{
+    successRedirect:'/profile',
+    failureRedirect:'/loginError'
+}))
+
+app.get('/loginError',(req,res)=>{
+    var errors=[]
+    errors.push({text:'Invalid email or password'})
+    res.render('home',{
+        title:'HOME',
+        errors:errors
+    })
+})
 
 app.listen(port,()=>{
     console.log('server started')

@@ -35,6 +35,9 @@ var userschema=new mongoose.Schema({
     wallet:{
         type:Number,
         default:0
+    },
+    password:{
+        type:String
     }
 })
 

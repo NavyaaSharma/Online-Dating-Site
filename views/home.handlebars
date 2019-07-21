@@ -24,6 +24,12 @@
                 {{this.text}}
             </div>
             {{/each}}
+            {{#each errors}}
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{this.text}}
+            </div>
+            {{/each}}
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" class="form-control">
