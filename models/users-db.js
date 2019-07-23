@@ -20,7 +20,8 @@ var userschema=new mongoose.Schema({
         type:String
     },
     image:{
-        type:String
+        type:String,
+        default:'/img/default.jpg'
     },
     city:{
         type:String

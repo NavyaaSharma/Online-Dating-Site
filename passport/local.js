@@ -1,5 +1,5 @@
 var passport=require('passport')
-var LocalStrategy=require('passport-local')
+var LocalStrategy=require('passport-local').Strategy
 var User=require('../models/users-db')
 
 passport.serializeUser((user,done)=>{
@@ -13,7 +13,7 @@ passport.deserializeUser((id,done)=>{
 })
 
 passport.use(new LocalStrategy({
-    usernameField:'username',
+    usernameField:'email',
     passwordField:'password'
 },(email,password,done)=>{
     console.log(email)
@@ -25,7 +25,6 @@ passport.use(new LocalStrategy({
         }   
         else
         {
-            console.log('y')
             return done(null,data)
         }
     })
