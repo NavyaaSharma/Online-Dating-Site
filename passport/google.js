@@ -16,7 +16,7 @@ passport.deserializeUser((id,done)=>{
 passport.use(new GoogleStrategy({
     clientID:keys.GoogleClientID,
     clientSecret:keys.GoogleClientSecret,
-    callbackURL:'http://localhost:3000/auth/google/callback',
+    callbackURL:'https://online-dating-site.herokuapp.com/auth/google/callback',
     profileFields:['email','name','displayName','photos']
 },(accessToken, refreshToken, profile, done)=>{
     console.log(profile)
