@@ -1,6 +1,6 @@
 var mongoose=require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/OnlineDating',{useNewUrlParser:true})
+mongoose.connect('mongodb+srv://onlinedating:cedt1992@cluster0-qiapg.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true})
 
 var store=new mongoose.Schema({
     name:{
